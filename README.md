@@ -2,5 +2,8 @@
 
 Welcome to the HackUPC2016 
 
-Carl Sagan
-Sergi Sanchez Centelles
+
+
+Authors: setzer22
+	 Sergi Sanchez Centelles
+
