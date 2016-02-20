@@ -15,7 +15,26 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from django.http import HttpResponse
+from django.shortcuts import render
+
+import json
+
+beacons_data = {}
+with open('../beacons/places.json', 'r') as beacons_file:
+    beacons_data = json.loads(beacons_file.read().replace('\n', ''))
+beacons = [b for b in beacons_data['beacons']]
+beacons_by_id = {};
+for beacon in beacons:
+    beacons_by_id[beacon['id']] = beacon
+    
+def beacon_info(request):
+    id = request.GET.get('id')
+    return HttpResponse(json.dumps(beacons_by_id[id]), content_type="application/json")
+    
+    
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^beaconserver/', include('beaconserver.urls')),
+    url(r'^beaconinfo/', beacon_info),
 ]

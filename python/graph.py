@@ -47,7 +47,7 @@ def path_time(path):
 
 # state [b1, b3, b4 ...]
 class BeaconProblem():
-    def __init__(self, initial_state, max_time, max_price, goal=None):
+    def __init__(self, initial_stat, max_time, max_price, goal=None):
         self.max_time = max_time
         self.max_price = max_price
         self.initial_state = initial_state
@@ -67,7 +67,7 @@ class BeaconProblem():
 
 
 p = BeaconProblem(['GqUQ'], 100, 60)
-def hill_climbing(problem):
+def solve(problem):
     current = problem.initial()
     current_val = 0
     while True:
