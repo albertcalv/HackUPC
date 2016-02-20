@@ -10,8 +10,19 @@ def load_dummy_data():
     user = [60,34,80]
     
     
-def get_dummy():
-    return 111
+def do_algorithm():
+    list_sites = []
+    
+    site_1 = ['000', 'description0']
+    list_sites.append(site_1)
+    
+    site_2 = ['001', 'description1']
+    list_sites.append(site_2)
+    
+    site_3 = ['002', 'description2']
+    list_sites.append(site_3)
+    
+    return list_sites
 
 def make_json(list_sites):
     response_data = {}
@@ -45,27 +56,10 @@ def index(request):
         topic = request.GET['topic']
     else: 
         topic = 0
-
-    vv = get_dummy()
     
-    
-    list_sites = []
-    
-    site_1 = ['000', 'description0']
-    list_sites.append(site_1)
-    
-    site_2 = ['001', 'description1']
-    list_sites.append(site_2)
-    
-    site_3 = ['002', 'description2']
-    list_sites.append(site_3)
-    
-        
+    list_sites = do_algorithm()    
     response_data = make_json(list_sites)
     
-    
-
-
     message = money
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
