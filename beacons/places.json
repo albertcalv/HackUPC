@@ -1,4 +1,5 @@
 {"beacons" : [
+        {"id": "0000", "name": "Hotel", "price": 0.0, "stay_time": 0.0, "features": []},
         {"id": "7bDw", "name": "Park Guell", "price": 7.0, "stay_time": 50.0, "features": ["architecture", "gaudi", "museum"]},
         {"id": "1EOn", "name": "Sagrada Familia", "price": 15.0, "stay_time": 30.0, "features": ["culture", "gaudi", "architecture", "religion"]},
         {"id": "pvLY", "name": "Hard Rock Cafe", "price": 10.0, "stay_time": 120.0, "features": ["music", "restaurant", "leisure"]},
@@ -6,10 +7,11 @@
         {"id": "GqUQ", "name": "Picasso Museum", "price": 7.0, "stay_time": 180.0, "features": ["culture", "art", "museum"]},
         {"id": "7YhC", "name": "Barcelona Cathedral", "price": 0.0, "stay_time": 30.0, "features": ["culture", "architecture", "religion", "history"]}
     ],
-"time_matrix" : [[0,  24, 31, 48, 44, 43], 
-                 [29, 0,  17, 30, 21, 7],
-                 [35, 17, 0,  31, 9,  8],
-                 [63, 29, 32, 0,  38, 34], 
-                 [46, 22, 13, 45, 0,  7],
-                 [43, 22, 9,  34, 40, 0]]
+"time_matrix" : [[0,  37, 17,  1, 33, 11, 8]
+                 [37, 0,  24, 31, 48, 44, 43], 
+                 [17, 29, 0,  17, 30, 21, 7],
+                 [1,  35, 17, 0,  31, 9,  8],
+                 [33, 63, 29, 32, 0,  38, 34], 
+                 [11, 46, 22, 13, 45, 0,  7],
+                 [8,  43, 22, 9,  34, 40, 0]]
 }
