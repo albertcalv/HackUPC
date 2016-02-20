@@ -35,6 +35,6 @@ def beacon_info(request):
     
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^beaconserver/', include('beaconserver.urls')),
     url(r'^beaconinfo/', beacon_info),
+    url(r'^beaconserver/', include('beaconserver.urls')),
 ]
