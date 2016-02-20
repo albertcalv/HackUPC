@@ -18,7 +18,7 @@ class Beacon:
         self.index = Beacon.beacon_count
         self.price = beacon['price']
         self.stay_time = beacon['stay_time']
-        self.topic = beacon['topic']
+        self.preferences = beacon['preferences']
         # Add more things here...
 
         Beacon.beacon_count = Beacon.beacon_count + 1

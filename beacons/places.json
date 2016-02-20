@@ -1,10 +1,10 @@
 {"beacons" : [
-        {"id": "7bDw", "price": 25.0, "stay_time": 0.3, "topic": 1},
-        {"id": "1EOn", "price": 25.0, "stay_time": 0.3, "topic": 1},
-        {"id": "pvLY", "price": 25.0, "stay_time": 0.3, "topic": 3},
-        {"id": "REbZ", "price": 25.0, "stay_time": 0.3, "topic": 2},
-        {"id": "GqUQ", "price": 25.0, "stay_time": 0.3, "topic": 1},
-        {"id": "7YhC", "price": 25.0, "stay_time": 0.3, "topic": 2}
+        {"id": "7bDw", "name": "Park Guell", "price": 7.0, "stay_time": 50.0, "features": ["architecture", "gaudi", "museum"]},
+        {"id": "1EOn", "name": "Sagrada Familia", "price": 15.0, "stay_time": 30.0, "features": ["culture", "gaudi", "architecture", "religion"]},
+        {"id": "pvLY", "name": "Hard Rock Cafe", "price": 10.0, "stay_time": 120.0, "features": ["music", "restaurant", "leisure"]},
+        {"id": "REbZ", "name": "Camp Nou", "price": 23.0, "stay_time": 60.0, "features": ["sports", "football", "museum"]},
+        {"id": "GqUQ", "name": "Picasso Museum", "price": 7.0, "stay_time": 180.0, "features": ["culture", "art", "museum"]},
+        {"id": "7YhC", "name": "Barcelona Cathedral", "price": 0.0, "stay_time": 30.0, "features": ["culture", "architecture", "religion", "history"]}
     ],
 "time_matrix" : [[0,  24, 31, 48, 44, 43], 
                  [29, 0,  17, 30, 21, 7],

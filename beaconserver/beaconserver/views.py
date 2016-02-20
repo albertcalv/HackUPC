@@ -22,6 +22,7 @@ class Beacon:
         self.price = beacon['price']
         self.stay_time = beacon['stay_time']
         self.topic = beacon['topic']
+        self.preferences = beacon['preferences']
         # Add more things here...
 
         Beacon.beacon_count = Beacon.beacon_count + 1
@@ -47,12 +48,20 @@ def path_time(path):
     this_cost = time_matrix[beacons_by_id[bi].index][beacons_by_id[bj].index];
     return this_cost + path_time(tail)
 
+def jaccard(s1, s2):
+    return len(set(s1).union(s2)) / len(set(s1).intersection(set(s2)))
+
+def preference_score(path, preferences):
+    beacon = beacons_by_id(path[0])
+    return jaccard(beacon.features, preferences) + preference_score(path[1:])
+
 # state [b1, b3, b4 ...]
 class BeaconProblem():
-    def __init__(self, initial_state, max_time, max_price, goal=None):
+    def __init__(self, initial_state, max_time, max_price, preferences):
         self.max_time = max_time
         self.max_price = max_price
         self.initial_state = initial_state
+        self.preferences = preferences
 
     def successor(self, state):
         return [imm_append(state, x) for x in beacon_ids if x not in state]
@@ -60,9 +69,10 @@ class BeaconProblem():
     def value(self, state):
         money_cost = sum([beacons_by_id[x].price for x in state])
         time_cost = path_time(state)
+        pref_score = preference_score(path, preferences)
         
         if money_cost > self.max_price or time_cost > self.max_time: return -100000000 
-        else: return money_cost + time_cost
+        else: return preference_score
     
     def initial(self):
         return self.initial_state
@@ -98,10 +108,6 @@ def index(request):
         money = int(request.GET['money'])
     else: 
         money = 0
-    if request.GET.get('topic'):
-        topic = request.GET['topic']
-    else: 
-        topic = 0
 
     if request.GET.get('start_beacon'):
         start_beacon = request.GET.get('start_beacon')
