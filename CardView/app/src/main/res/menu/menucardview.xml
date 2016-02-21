@@ -6,7 +6,7 @@
     <item
         android:id="@+id/action_plus"
         android:title="@string/action_routing"
-        android:icon="@drawable/ic_action_plus"
+        android:icon="@drawable/walker"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_events"

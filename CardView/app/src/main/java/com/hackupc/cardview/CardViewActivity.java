@@ -40,7 +40,7 @@ public class CardViewActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         thisClass = this;
-
+        setTitle("HackUPC Travel");
         setContentView(R.layout.activity_card_view);
 /*
         =
@@ -141,15 +141,15 @@ public class CardViewActivity extends ActionBarActivity {
                 public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                     if (position % 2 == 1) {
                         CardView selectedCard = (CardView) v.findViewById(R.id.cardbeacon);
-                        Integer widthCard = 800; //size expanded
+                        Integer widthCard = 600; //size expanded
                         if (datos[position].changeExpanded()) widthCard = 400;  //size non expanded
                         selectedCard.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, widthCard));
                     } else {
                         CardView selectedCard = (CardView) v.findViewById(R.id.cardroute);
-                        Integer widthCard = 800; //size expanded
+                        Integer widthCard = 400; //size expanded
                         Log.d("A",datos.toString());
                         Log.d("A",Integer.toString(position));
-                        if (datos[position].changeExpanded()) widthCard = 400;  //Size non expanded
+                        if (datos[position].changeExpanded()) widthCard = 250;  //Size non expanded
                         selectedCard.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, widthCard));
                     }
                 }
