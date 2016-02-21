@@ -33,12 +33,14 @@ public class CardViewActivity extends ActionBarActivity {
     private Card[] datos;
     private ListView lstCards;
     private Activity thisClass;
+    private Boolean daude;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        daude = false;
         thisClass = this;
         setTitle("HackUPC Travel");
         setContentView(R.layout.activity_card_view);
@@ -95,7 +97,14 @@ public class CardViewActivity extends ActionBarActivity {
                           + "date_end="+ URLEncoder.encode("25/02/2016 20:00", "UTF-8") + "&"
                           + "money=50" + "&"
                           + "preferences="+URLEncoder.encode("['gaudi','museum','religion']", "UTF-8");
-                Log.d("A", url);
+                if(daude){
+                    url = "http://ec2-54-187-231-186.us-west-2.compute.amazonaws.com:8000/beaconserver";
+                    url = url + "?date_ini=" + URLEncoder.encode("25/02/2016 16:00","UTF-8") + "&"
+                            + "date_end="+ URLEncoder.encode("25/02/2016 20:00", "UTF-8") + "&"
+                            + "money=7" + "&"
+                            + "preferences="+URLEncoder.encode("['culture','architecture','history']", "UTF-8");
+                }
+                daude = true;
                 HttpGet request = new HttpGet(url);
                 HttpResponse response = httpClient.execute(request);
                 BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
