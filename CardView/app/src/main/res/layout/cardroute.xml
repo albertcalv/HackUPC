@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardroute"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        card_view:cardBackgroundColor="#b5bd68"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardPreventCornerOverlap="false" >
+
+        <LinearLayout
+            android:id="@+id/CardsContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtRoute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_gravity="top"
+            android:text="Route Details"
+            android:background="#8c9440"
+            android:textColor="#ffe3e3e3"
+            android:textSize="24sp" />
+
+
+        <LinearLayout
+            android:id="@+id/MinutesContainer"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/txtMinutes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="top"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/imgWalk"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:src="@drawable/walk"
+                />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

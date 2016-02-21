@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardbeacon"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        card_view:cardBackgroundColor="#fffffe91"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="8dp"
+        card_view:cardPreventCornerOverlap="false" >
+
+
+        <ImageView
+            android:id="@+id/imgSite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/site1"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/txtSite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Sagrada Familia"
+            android:layout_gravity="bottom"
+            android:background="#8c000000"
+            android:textColor="#ffe3e3e3"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
